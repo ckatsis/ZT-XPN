@@ -1,0 +1,1035 @@
+{
+  "header_types" : [
+    {
+      "name" : "scalars_0",
+      "id" : 0,
+      "fields" : [
+        ["hasReturned", 1, false],
+        ["_padding_0", 7, false]
+      ]
+    },
+    {
+      "name" : "standard_metadata",
+      "id" : 1,
+      "fields" : [
+        ["ingress_port", 9, false],
+        ["egress_spec", 9, false],
+        ["egress_port", 9, false],
+        ["instance_type", 32, false],
+        ["packet_length", 32, false],
+        ["enq_timestamp", 32, false],
+        ["enq_qdepth", 19, false],
+        ["deq_timedelta", 32, false],
+        ["deq_qdepth", 19, false],
+        ["ingress_global_timestamp", 48, false],
+        ["egress_global_timestamp", 48, false],
+        ["mcast_grp", 16, false],
+        ["egress_rid", 16, false],
+        ["checksum_error", 1, false],
+        ["parser_error", 32, false],
+        ["priority", 3, false],
+        ["_padding", 3, false]
+      ]
+    },
+    {
+      "name" : "cpu_in_header_t",
+      "id" : 2,
+      "fields" : [
+        ["ingress_port", 9, false],
+        ["padding", 7, false]
+      ]
+    },
+    {
+      "name" : "cpu_out_header_t",
+      "id" : 3,
+      "fields" : [
+        ["egress_port", 9, false],
+        ["padding", 7, false]
+      ]
+    },
+    {
+      "name" : "ethernet_t",
+      "id" : 4,
+      "fields" : [
+        ["destinationMAC", 48, false],
+        ["sourceMAC", 48, false],
+        ["etherType", 16, false]
+      ]
+    },
+    {
+      "name" : "ip_t",
+      "id" : 5,
+      "fields" : [
+        ["version", 4, false],
+        ["ihl", 4, false],
+        ["dscp", 6, false],
+        ["ecn", 2, false],
+        ["totallen", 16, false],
+        ["identification", 16, false],
+        ["flags", 3, false],
+        ["fragoff", 13, false],
+        ["ttl", 8, false],
+        ["proto", 8, false],
+        ["hdr_checksum", 16, false],
+        ["sourceAddress", 32, false],
+        ["destinationAddress", 32, false]
+      ]
+    },
+    {
+      "name" : "tcp_t",
+      "id" : 6,
+      "fields" : [
+        ["sourcePort", 16, false],
+        ["destinationPort", 16, false],
+        ["sequenceNo", 32, false],
+        ["ack", 32, false],
+        ["dataOffset", 4, false],
+        ["res", 3, false],
+        ["ecn", 3, false],
+        ["ctrl", 6, false],
+        ["windowSize", 16, false],
+        ["checksum", 16, false],
+        ["urgentPointer", 16, false]
+      ]
+    }
+  ],
+  "headers" : [
+    {
+      "name" : "scalars",
+      "id" : 0,
+      "header_type" : "scalars_0",
+      "metadata" : true,
+      "pi_omit" : true
+    },
+    {
+      "name" : "standard_metadata",
+      "id" : 1,
+      "header_type" : "standard_metadata",
+      "metadata" : true,
+      "pi_omit" : true
+    },
+    {
+      "name" : "cpu_in_header",
+      "id" : 2,
+      "header_type" : "cpu_in_header_t",
+      "metadata" : false,
+      "pi_omit" : true
+    },
+    {
+      "name" : "cpu_out_header",
+      "id" : 3,
+      "header_type" : "cpu_out_header_t",
+      "metadata" : false,
+      "pi_omit" : true
+    },
+    {
+      "name" : "ethernet",
+      "id" : 4,
+      "header_type" : "ethernet_t",
+      "metadata" : false,
+      "pi_omit" : true
+    },
+    {
+      "name" : "ip",
+      "id" : 5,
+      "header_type" : "ip_t",
+      "metadata" : false,
+      "pi_omit" : true
+    },
+    {
+      "name" : "tcp",
+      "id" : 6,
+      "header_type" : "tcp_t",
+      "metadata" : false,
+      "pi_omit" : true
+    }
+  ],
+  "header_stacks" : [],
+  "header_union_types" : [],
+  "header_unions" : [],
+  "header_union_stacks" : [],
+  "field_lists" : [],
+  "errors" : [
+    ["NoError", 0],
+    ["PacketTooShort", 1],
+    ["NoMatch", 2],
+    ["StackOutOfBounds", 3],
+    ["HeaderTooShort", 4],
+    ["ParserTimeout", 5],
+    ["ParserInvalidArgument", 6]
+  ],
+  "enums" : [],
+  "parsers" : [
+    {
+      "name" : "parser",
+      "id" : 0,
+      "init_state" : "start",
+      "parse_states" : [
+        {
+          "name" : "start",
+          "id" : 0,
+          "parser_ops" : [],
+          "transitions" : [
+            {
+              "type" : "hexstr",
+              "value" : "0x00ff",
+              "mask" : null,
+              "next_state" : "parse_packet_out"
+            },
+            {
+              "type" : "default",
+              "value" : null,
+              "mask" : null,
+              "next_state" : "parse_ethernet"
+            }
+          ],
+          "transition_key" : [
+            {
+              "type" : "field",
+              "value" : ["standard_metadata", "ingress_port"]
+            }
+          ]
+        },
+        {
+          "name" : "parse_packet_out",
+          "id" : 1,
+          "parser_ops" : [
+            {
+              "parameters" : [
+                {
+                  "type" : "regular",
+                  "value" : "cpu_out_header"
+                }
+              ],
+              "op" : "extract"
+            }
+          ],
+          "transitions" : [
+            {
+              "type" : "default",
+              "value" : null,
+              "mask" : null,
+              "next_state" : "parse_ethernet"
+            }
+          ],
+          "transition_key" : []
+        },
+        {
+          "name" : "error_unsupported_encapsulation",
+          "id" : 2,
+          "parser_ops" : [
+            {
+              "parameters" : [
+                {
+                  "type" : "bool",
+                  "value" : false
+                },
+                {
+                  "type" : "hexstr",
+                  "value" : "0x2"
+                }
+              ],
+              "op" : "verify"
+            }
+          ],
+          "transitions" : [
+            {
+              "type" : "default",
+              "value" : null,
+              "mask" : null,
+              "next_state" : null
+            }
+          ],
+          "transition_key" : []
+        },
+        {
+          "name" : "parse_ethernet",
+          "id" : 3,
+          "parser_ops" : [
+            {
+              "parameters" : [
+                {
+                  "type" : "regular",
+                  "value" : "ethernet"
+                }
+              ],
+              "op" : "extract"
+            }
+          ],
+          "transitions" : [
+            {
+              "type" : "hexstr",
+              "value" : "0x88cc",
+              "mask" : null,
+              "next_state" : null
+            },
+            {
+              "type" : "hexstr",
+              "value" : "0x8942",
+              "mask" : null,
+              "next_state" : null
+            },
+            {
+              "type" : "hexstr",
+              "value" : "0x0800",
+              "mask" : null,
+              "next_state" : "parse_ip"
+            },
+            {
+              "type" : "hexstr",
+              "value" : "0x0806",
+              "mask" : null,
+              "next_state" : null
+            },
+            {
+              "type" : "default",
+              "value" : null,
+              "mask" : null,
+              "next_state" : "error_unsupported_encapsulation"
+            }
+          ],
+          "transition_key" : [
+            {
+              "type" : "field",
+              "value" : ["ethernet", "etherType"]
+            }
+          ]
+        },
+        {
+          "name" : "parse_ip",
+          "id" : 4,
+          "parser_ops" : [
+            {
+              "parameters" : [
+                {
+                  "type" : "regular",
+                  "value" : "ip"
+                }
+              ],
+              "op" : "extract"
+            }
+          ],
+          "transitions" : [
+            {
+              "type" : "hexstr",
+              "value" : "0x06",
+              "mask" : null,
+              "next_state" : "parse_tcp"
+            },
+            {
+              "type" : "default",
+              "value" : null,
+              "mask" : null,
+              "next_state" : "error_unsupported_encapsulation"
+            }
+          ],
+          "transition_key" : [
+            {
+              "type" : "field",
+              "value" : ["ip", "proto"]
+            }
+          ]
+        },
+        {
+          "name" : "parse_tcp",
+          "id" : 5,
+          "parser_ops" : [
+            {
+              "parameters" : [
+                {
+                  "type" : "regular",
+                  "value" : "tcp"
+                }
+              ],
+              "op" : "extract"
+            }
+          ],
+          "transitions" : [
+            {
+              "type" : "default",
+              "value" : null,
+              "mask" : null,
+              "next_state" : null
+            }
+          ],
+          "transition_key" : []
+        }
+      ]
+    }
+  ],
+  "parse_vsets" : [],
+  "deparsers" : [
+    {
+      "name" : "deparser",
+      "id" : 0,
+      "source_info" : {
+        "filename" : "./device:bmv2:s1.p4",
+        "line" : 153,
+        "column" : 8,
+        "source_fragment" : "DeparserImpl"
+      },
+      "order" : ["cpu_in_header", "cpu_out_header", "ethernet", "ip", "tcp"],
+      "primitives" : []
+    }
+  ],
+  "meter_arrays" : [],
+  "counter_arrays" : [
+    {
+      "name" : "IngressControl.acl_t_flow_counter",
+      "id" : 0,
+      "is_direct" : true,
+      "binding" : "IngressControl.acl_t",
+      "source_info" : {
+        "filename" : "./device:bmv2:s1.p4",
+        "line" : 112,
+        "column" : 50,
+        "source_fragment" : "acl_t_flow_counter"
+      }
+    }
+  ],
+  "register_arrays" : [],
+  "calculations" : [],
+  "learn_lists" : [],
+  "actions" : [
+    {
+      "name" : "IngressControl.dropPacket",
+      "id" : 0,
+      "runtime_data" : [],
+      "primitives" : [
+        {
+          "op" : "mark_to_drop",
+          "parameters" : [
+            {
+              "type" : "header",
+              "value" : "standard_metadata"
+            }
+          ],
+          "source_info" : {
+            "filename" : "./device:bmv2:s1.p4",
+            "line" : 102,
+            "column" : 2,
+            "source_fragment" : "mark_to_drop ( standard_metadata )"
+          }
+        }
+      ]
+    },
+    {
+      "name" : "IngressControl.dropPacket",
+      "id" : 1,
+      "runtime_data" : [],
+      "primitives" : [
+        {
+          "op" : "mark_to_drop",
+          "parameters" : [
+            {
+              "type" : "header",
+              "value" : "standard_metadata"
+            }
+          ],
+          "source_info" : {
+            "filename" : "./device:bmv2:s1.p4",
+            "line" : 102,
+            "column" : 2,
+            "source_fragment" : "mark_to_drop ( standard_metadata )"
+          }
+        }
+      ]
+    },
+    {
+      "name" : "IngressControl.send_to_controller",
+      "id" : 2,
+      "runtime_data" : [],
+      "primitives" : [
+        {
+          "op" : "assign",
+          "parameters" : [
+            {
+              "type" : "field",
+              "value" : ["standard_metadata", "egress_spec"]
+            },
+            {
+              "type" : "hexstr",
+              "value" : "0x00ff"
+            }
+          ],
+          "source_info" : {
+            "filename" : "./device:bmv2:s1.p4",
+            "line" : 3,
+            "column" : 24,
+            "source_fragment" : "255; ..."
+          }
+        },
+        {
+          "op" : "add_header",
+          "parameters" : [
+            {
+              "type" : "header",
+              "value" : "cpu_in_header"
+            }
+          ],
+          "source_info" : {
+            "filename" : "./device:bmv2:s1.p4",
+            "line" : 106,
+            "column" : 2,
+            "source_fragment" : "parsed_headers.cpu_in_header.setValid ( )"
+          }
+        },
+        {
+          "op" : "assign",
+          "parameters" : [
+            {
+              "type" : "field",
+              "value" : ["cpu_in_header", "ingress_port"]
+            },
+            {
+              "type" : "field",
+              "value" : ["standard_metadata", "ingress_port"]
+            }
+          ],
+          "source_info" : {
+            "filename" : "./device:bmv2:s1.p4",
+            "line" : 107,
+            "column" : 2,
+            "source_fragment" : "parsed_headers.cpu_in_header.ingress_port = standard_metadata.ingress_port"
+          }
+        }
+      ]
+    },
+    {
+      "name" : "IngressControl.set_out_port",
+      "id" : 3,
+      "runtime_data" : [
+        {
+          "name" : "out_port",
+          "bitwidth" : 9
+        }
+      ],
+      "primitives" : [
+        {
+          "op" : "assign",
+          "parameters" : [
+            {
+              "type" : "field",
+              "value" : ["standard_metadata", "egress_spec"]
+            },
+            {
+              "type" : "runtime_data",
+              "value" : 0
+            }
+          ],
+          "source_info" : {
+            "filename" : "./device:bmv2:s1.p4",
+            "line" : 110,
+            "column" : 2,
+            "source_fragment" : "standard_metadata.egress_spec = out_port"
+          }
+        }
+      ]
+    },
+    {
+      "name" : "IngressControl.set_out_port",
+      "id" : 4,
+      "runtime_data" : [],
+      "primitives" : [
+        {
+          "op" : "assign",
+          "parameters" : [
+            {
+              "type" : "field",
+              "value" : ["standard_metadata", "egress_spec"]
+            },
+            {
+              "type" : "field",
+              "value" : ["cpu_out_header", "egress_port"]
+            }
+          ],
+          "source_info" : {
+            "filename" : "./device:bmv2:s1.p4",
+            "line" : 110,
+            "column" : 2,
+            "source_fragment" : "standard_metadata.egress_spec = out_port"
+          }
+        }
+      ]
+    },
+    {
+      "name" : "devicebmv2s1l132",
+      "id" : 5,
+      "runtime_data" : [],
+      "primitives" : [
+        {
+          "op" : "assign",
+          "parameters" : [
+            {
+              "type" : "field",
+              "value" : ["scalars", "hasReturned"]
+            },
+            {
+              "type" : "expression",
+              "value" : {
+                "type" : "expression",
+                "value" : {
+                  "op" : "b2d",
+                  "left" : null,
+                  "right" : {
+                    "type" : "bool",
+                    "value" : true
+                  }
+                }
+              }
+            }
+          ],
+          "source_info" : {
+            "filename" : "./device:bmv2:s1.p4",
+            "line" : 132,
+            "column" : 3,
+            "source_fragment" : "return"
+          }
+        }
+      ]
+    },
+    {
+      "name" : "act",
+      "id" : 6,
+      "runtime_data" : [],
+      "primitives" : [
+        {
+          "op" : "assign",
+          "parameters" : [
+            {
+              "type" : "field",
+              "value" : ["scalars", "hasReturned"]
+            },
+            {
+              "type" : "expression",
+              "value" : {
+                "type" : "expression",
+                "value" : {
+                  "op" : "b2d",
+                  "left" : null,
+                  "right" : {
+                    "type" : "bool",
+                    "value" : false
+                  }
+                }
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name" : "devicebmv2s1l137",
+      "id" : 7,
+      "runtime_data" : [],
+      "primitives" : [
+        {
+          "op" : "remove_header",
+          "parameters" : [
+            {
+              "type" : "header",
+              "value" : "cpu_out_header"
+            }
+          ],
+          "source_info" : {
+            "filename" : "./device:bmv2:s1.p4",
+            "line" : 137,
+            "column" : 3,
+            "source_fragment" : "parsed_headers.cpu_out_header.setInvalid ( )"
+          }
+        },
+        {
+          "op" : "assign",
+          "parameters" : [
+            {
+              "type" : "field",
+              "value" : ["scalars", "hasReturned"]
+            },
+            {
+              "type" : "expression",
+              "value" : {
+                "type" : "expression",
+                "value" : {
+                  "op" : "b2d",
+                  "left" : null,
+                  "right" : {
+                    "type" : "bool",
+                    "value" : true
+                  }
+                }
+              }
+            }
+          ],
+          "source_info" : {
+            "filename" : "./device:bmv2:s1.p4",
+            "line" : 138,
+            "column" : 3,
+            "source_fragment" : "return"
+          }
+        }
+      ]
+    }
+  ],
+  "pipelines" : [
+    {
+      "name" : "ingress",
+      "id" : 0,
+      "source_info" : {
+        "filename" : "./device:bmv2:s1.p4",
+        "line" : 100,
+        "column" : 8,
+        "source_fragment" : "IngressControl"
+      },
+      "init_table" : "tbl_act",
+      "tables" : [
+        {
+          "name" : "tbl_act",
+          "id" : 0,
+          "key" : [],
+          "match_type" : "exact",
+          "type" : "simple",
+          "max_size" : 1024,
+          "with_counters" : false,
+          "support_timeout" : false,
+          "direct_meters" : null,
+          "action_ids" : [6],
+          "actions" : ["act"],
+          "base_default_next" : "node_3",
+          "next_tables" : {
+            "act" : "node_3"
+          },
+          "default_entry" : {
+            "action_id" : 6,
+            "action_const" : true,
+            "action_data" : [],
+            "action_entry_const" : true
+          }
+        },
+        {
+          "name" : "tbl_dropPacket",
+          "id" : 1,
+          "source_info" : {
+            "filename" : "./device:bmv2:s1.p4",
+            "line" : 131,
+            "column" : 3,
+            "source_fragment" : "dropPacket ( )"
+          },
+          "key" : [],
+          "match_type" : "exact",
+          "type" : "simple",
+          "max_size" : 1024,
+          "with_counters" : false,
+          "support_timeout" : false,
+          "direct_meters" : null,
+          "action_ids" : [1],
+          "actions" : ["IngressControl.dropPacket"],
+          "base_default_next" : "tbl_devicebmv2s1l132",
+          "next_tables" : {
+            "IngressControl.dropPacket" : "tbl_devicebmv2s1l132"
+          },
+          "default_entry" : {
+            "action_id" : 1,
+            "action_const" : true,
+            "action_data" : [],
+            "action_entry_const" : true
+          }
+        },
+        {
+          "name" : "tbl_devicebmv2s1l132",
+          "id" : 2,
+          "source_info" : {
+            "filename" : "./device:bmv2:s1.p4",
+            "line" : 132,
+            "column" : 3,
+            "source_fragment" : "return"
+          },
+          "key" : [],
+          "match_type" : "exact",
+          "type" : "simple",
+          "max_size" : 1024,
+          "with_counters" : false,
+          "support_timeout" : false,
+          "direct_meters" : null,
+          "action_ids" : [5],
+          "actions" : ["devicebmv2s1l132"],
+          "base_default_next" : "node_6",
+          "next_tables" : {
+            "devicebmv2s1l132" : "node_6"
+          },
+          "default_entry" : {
+            "action_id" : 5,
+            "action_const" : true,
+            "action_data" : [],
+            "action_entry_const" : true
+          }
+        },
+        {
+          "name" : "tbl_set_out_port",
+          "id" : 3,
+          "source_info" : {
+            "filename" : "./device:bmv2:s1.p4",
+            "line" : 136,
+            "column" : 3,
+            "source_fragment" : "set_out_port ( parsed_headers.cpu_out_header.egress_port )"
+          },
+          "key" : [],
+          "match_type" : "exact",
+          "type" : "simple",
+          "max_size" : 1024,
+          "with_counters" : false,
+          "support_timeout" : false,
+          "direct_meters" : null,
+          "action_ids" : [4],
+          "actions" : ["IngressControl.set_out_port"],
+          "base_default_next" : "tbl_devicebmv2s1l137",
+          "next_tables" : {
+            "IngressControl.set_out_port" : "tbl_devicebmv2s1l137"
+          },
+          "default_entry" : {
+            "action_id" : 4,
+            "action_const" : true,
+            "action_data" : [],
+            "action_entry_const" : true
+          }
+        },
+        {
+          "name" : "tbl_devicebmv2s1l137",
+          "id" : 4,
+          "source_info" : {
+            "filename" : "./device:bmv2:s1.p4",
+            "line" : 137,
+            "column" : 3,
+            "source_fragment" : "parsed_headers.cpu_out_header.setInvalid ( ) ; ..."
+          },
+          "key" : [],
+          "match_type" : "exact",
+          "type" : "simple",
+          "max_size" : 1024,
+          "with_counters" : false,
+          "support_timeout" : false,
+          "direct_meters" : null,
+          "action_ids" : [7],
+          "actions" : ["devicebmv2s1l137"],
+          "base_default_next" : "node_10",
+          "next_tables" : {
+            "devicebmv2s1l137" : "node_10"
+          },
+          "default_entry" : {
+            "action_id" : 7,
+            "action_const" : true,
+            "action_data" : [],
+            "action_entry_const" : true
+          }
+        },
+        {
+          "name" : "IngressControl.acl_t",
+          "id" : 5,
+          "source_info" : {
+            "filename" : "./device:bmv2:s1.p4",
+            "line" : 113,
+            "column" : 7,
+            "source_fragment" : "acl_t"
+          },
+          "key" : [
+            {
+              "match_type" : "ternary",
+              "name" : "parsed_headers.ethernet.etherType",
+              "target" : ["ethernet", "etherType"],
+              "mask" : null
+            },
+            {
+              "match_type" : "ternary",
+              "name" : "parsed_headers.ip.destinationAddress",
+              "target" : ["ip", "destinationAddress"],
+              "mask" : null
+            },
+            {
+              "match_type" : "ternary",
+              "name" : "parsed_headers.ip.proto",
+              "target" : ["ip", "proto"],
+              "mask" : null
+            },
+            {
+              "match_type" : "ternary",
+              "name" : "parsed_headers.ip.sourceAddress",
+              "target" : ["ip", "sourceAddress"],
+              "mask" : null
+            },
+            {
+              "match_type" : "ternary",
+              "name" : "parsed_headers.tcp.destinationPort",
+              "target" : ["tcp", "destinationPort"],
+              "mask" : null
+            }
+          ],
+          "match_type" : "ternary",
+          "type" : "simple",
+          "max_size" : 1024,
+          "with_counters" : true,
+          "support_timeout" : false,
+          "direct_meters" : null,
+          "action_ids" : [0, 2, 3],
+          "actions" : ["IngressControl.dropPacket", "IngressControl.send_to_controller", "IngressControl.set_out_port"],
+          "base_default_next" : null,
+          "next_tables" : {
+            "IngressControl.dropPacket" : null,
+            "IngressControl.send_to_controller" : null,
+            "IngressControl.set_out_port" : null
+          },
+          "default_entry" : {
+            "action_id" : 0,
+            "action_const" : false,
+            "action_data" : [],
+            "action_entry_const" : false
+          }
+        }
+      ],
+      "action_profiles" : [],
+      "conditionals" : [
+        {
+          "name" : "node_3",
+          "id" : 0,
+          "source_info" : {
+            "filename" : "./device:bmv2:s1.p4",
+            "line" : 130,
+            "column" : 7,
+            "source_fragment" : "standard_metadata.parser_error != error.NoError"
+          },
+          "expression" : {
+            "type" : "expression",
+            "value" : {
+              "op" : "!=",
+              "left" : {
+                "type" : "field",
+                "value" : ["standard_metadata", "parser_error"]
+              },
+              "right" : {
+                "type" : "hexstr",
+                "value" : "0x0"
+              }
+            }
+          },
+          "true_next" : "tbl_dropPacket",
+          "false_next" : "node_6"
+        },
+        {
+          "name" : "node_6",
+          "id" : 1,
+          "expression" : {
+            "type" : "expression",
+            "value" : {
+              "op" : "d2b",
+              "left" : null,
+              "right" : {
+                "type" : "field",
+                "value" : ["scalars", "hasReturned"]
+              }
+            }
+          },
+          "false_next" : "node_7",
+          "true_next" : "node_10"
+        },
+        {
+          "name" : "node_7",
+          "id" : 2,
+          "source_info" : {
+            "filename" : "./device:bmv2:s1.p4",
+            "line" : 135,
+            "column" : 7,
+            "source_fragment" : "parsed_headers.cpu_out_header.isValid ( )"
+          },
+          "expression" : {
+            "type" : "expression",
+            "value" : {
+              "op" : "d2b",
+              "left" : null,
+              "right" : {
+                "type" : "field",
+                "value" : ["cpu_out_header", "$valid$"]
+              }
+            }
+          },
+          "true_next" : "tbl_set_out_port",
+          "false_next" : "node_10"
+        },
+        {
+          "name" : "node_10",
+          "id" : 3,
+          "expression" : {
+            "type" : "expression",
+            "value" : {
+              "op" : "d2b",
+              "left" : null,
+              "right" : {
+                "type" : "field",
+                "value" : ["scalars", "hasReturned"]
+              }
+            }
+          },
+          "true_next" : null,
+          "false_next" : "IngressControl.acl_t"
+        }
+      ]
+    },
+    {
+      "name" : "egress",
+      "id" : 1,
+      "source_info" : {
+        "filename" : "./device:bmv2:s1.p4",
+        "line" : 145,
+        "column" : 8,
+        "source_fragment" : "EgressControl"
+      },
+      "init_table" : null,
+      "tables" : [],
+      "action_profiles" : [],
+      "conditionals" : []
+    }
+  ],
+  "checksums" : [],
+  "force_arith" : [],
+  "extern_instances" : [],
+  "field_aliases" : [
+    [
+      "queueing_metadata.enq_timestamp",
+      ["standard_metadata", "enq_timestamp"]
+    ],
+    [
+      "queueing_metadata.enq_qdepth",
+      ["standard_metadata", "enq_qdepth"]
+    ],
+    [
+      "queueing_metadata.deq_timedelta",
+      ["standard_metadata", "deq_timedelta"]
+    ],
+    [
+      "queueing_metadata.deq_qdepth",
+      ["standard_metadata", "deq_qdepth"]
+    ],
+    [
+      "intrinsic_metadata.ingress_global_timestamp",
+      ["standard_metadata", "ingress_global_timestamp"]
+    ],
+    [
+      "intrinsic_metadata.egress_global_timestamp",
+      ["standard_metadata", "egress_global_timestamp"]
+    ],
+    [
+      "intrinsic_metadata.mcast_grp",
+      ["standard_metadata", "mcast_grp"]
+    ],
+    [
+      "intrinsic_metadata.egress_rid",
+      ["standard_metadata", "egress_rid"]
+    ],
+    [
+      "intrinsic_metadata.priority",
+      ["standard_metadata", "priority"]
+    ]
+  ],
+  "program" : "./device:bmv2:s1.p4",
+  "__meta__" : {
+    "version" : [2, 23],
+    "compiler" : "https://github.com/p4lang/p4c"
+  }
+}

@@ -1,0 +1,261 @@
+{
+    "devices": {
+        "device:bmv2:s1": {
+            "basic": {
+                "managementAddress": "grpc://127.0.0.1:55525?device_id=1",
+                "driver": "bmv2",
+                "pipeconf": "device:bmv2:s1"
+            },
+            "ports": {
+                "1": {
+                    "number": 1,
+                    "name": "s1-eth1",
+                    "enabled": true,
+                    "removed": false,
+                    "type": "copper",
+                    "speed": 10000
+                },
+                "2": {
+                    "number": 2,
+                    "name": "s1-eth2",
+                    "enabled": true,
+                    "removed": false,
+                    "type": "copper",
+                    "speed": 10000
+                },
+                "3": {
+                    "number": 3,
+                    "name": "s1-eth3",
+                    "enabled": true,
+                    "removed": false,
+                    "type": "copper",
+                    "speed": 10000
+                },
+                "4": {
+                    "number": 4,
+                    "name": "s1-eth4",
+                    "enabled": true,
+                    "removed": false,
+                    "type": "copper",
+                    "speed": 10000
+                },
+                "5": {
+                    "number": 5,
+                    "name": "s1-eth5",
+                    "enabled": true,
+                    "removed": false,
+                    "type": "copper",
+                    "speed": 10000
+                },
+                "6": {
+                    "number": 6,
+                    "name": "s1-eth6",
+                    "enabled": true,
+                    "removed": false,
+                    "type": "copper",
+                    "speed": 10000
+                },
+                "7": {
+                    "number": 7,
+                    "name": "s1-eth7",
+                    "enabled": true,
+                    "removed": false,
+                    "type": "copper",
+                    "speed": 10000
+                },
+                "8": {
+                    "number": 8,
+                    "name": "s1-eth8",
+                    "enabled": true,
+                    "removed": false,
+                    "type": "copper",
+                    "speed": 10000
+                },
+                "9": {
+                    "number": 9,
+                    "name": "s1-eth9",
+                    "enabled": true,
+                    "removed": false,
+                    "type": "copper",
+                    "speed": 10000
+                },
+                "10": {
+                    "number": 10,
+                    "name": "s1-eth10",
+                    "enabled": true,
+                    "removed": false,
+                    "type": "copper",
+                    "speed": 10000
+                },
+                "11": {
+                    "number": 11,
+                    "name": "s1-eth11",
+                    "enabled": true,
+                    "removed": false,
+                    "type": "copper",
+                    "speed": 10000
+                },
+                "12": {
+                    "number": 12,
+                    "name": "s1-eth12",
+                    "enabled": true,
+                    "removed": false,
+                    "type": "copper",
+                    "speed": 10000
+                },
+                "13": {
+                    "number": 13,
+                    "name": "s1-eth13",
+                    "enabled": true,
+                    "removed": false,
+                    "type": "copper",
+                    "speed": 10000
+                },
+                "14": {
+                    "number": 14,
+                    "name": "s1-eth14",
+                    "enabled": true,
+                    "removed": false,
+                    "type": "copper",
+                    "speed": 10000
+                },
+                "15": {
+                    "number": 15,
+                    "name": "s1-eth15",
+                    "enabled": true,
+                    "removed": false,
+                    "type": "copper",
+                    "speed": 10000
+                },
+                "16": {
+                    "number": 16,
+                    "name": "s1-eth16",
+                    "enabled": true,
+                    "removed": false,
+                    "type": "copper",
+                    "speed": 10000
+                },
+                "17": {
+                    "number": 17,
+                    "name": "s1-eth17",
+                    "enabled": true,
+                    "removed": false,
+                    "type": "copper",
+                    "speed": 10000
+                },
+                "18": {
+                    "number": 18,
+                    "name": "s1-eth18",
+                    "enabled": true,
+                    "removed": false,
+                    "type": "copper",
+                    "speed": 10000
+                },
+                "19": {
+                    "number": 19,
+                    "name": "s1-eth19",
+                    "enabled": true,
+                    "removed": false,
+                    "type": "copper",
+                    "speed": 10000
+                },
+                "20": {
+                    "number": 20,
+                    "name": "s1-eth20",
+                    "enabled": true,
+                    "removed": false,
+                    "type": "copper",
+                    "speed": 10000
+                },
+                "21": {
+                    "number": 21,
+                    "name": "s1-eth21",
+                    "enabled": true,
+                    "removed": false,
+                    "type": "copper",
+                    "speed": 10000
+                },
+                "22": {
+                    "number": 22,
+                    "name": "s1-eth22",
+                    "enabled": true,
+                    "removed": false,
+                    "type": "copper",
+                    "speed": 10000
+                },
+                "23": {
+                    "number": 23,
+                    "name": "s1-eth23",
+                    "enabled": true,
+                    "removed": false,
+                    "type": "copper",
+                    "speed": 10000
+                },
+                "24": {
+                    "number": 24,
+                    "name": "s1-eth24",
+                    "enabled": true,
+                    "removed": false,
+                    "type": "copper",
+                    "speed": 10000
+                },
+                "25": {
+                    "number": 25,
+                    "name": "s1-eth25",
+                    "enabled": true,
+                    "removed": false,
+                    "type": "copper",
+                    "speed": 10000
+                },
+                "26": {
+                    "number": 26,
+                    "name": "s1-eth26",
+                    "enabled": true,
+                    "removed": false,
+                    "type": "copper",
+                    "speed": 10000
+                },
+                "27": {
+                    "number": 27,
+                    "name": "s1-eth27",
+                    "enabled": true,
+                    "removed": false,
+                    "type": "copper",
+                    "speed": 10000
+                },
+                "28": {
+                    "number": 28,
+                    "name": "s1-eth28",
+                    "enabled": true,
+                    "removed": false,
+                    "type": "copper",
+                    "speed": 10000
+                },
+                "29": {
+                    "number": 29,
+                    "name": "s1-eth29",
+                    "enabled": true,
+                    "removed": false,
+                    "type": "copper",
+                    "speed": 10000
+                },
+                "30": {
+                    "number": 30,
+                    "name": "s1-eth30",
+                    "enabled": true,
+                    "removed": false,
+                    "type": "copper",
+                    "speed": 10000
+                },
+                "31": {
+                    "number": 31,
+                    "name": "s1-eth31",
+                    "enabled": true,
+                    "removed": false,
+                    "type": "copper",
+                    "speed": 10000
+                }
+            }
+        }
+    }
+}

@@ -1,0 +1,210 @@
+------------------------------------------------------------
+Client connecting to 10.0.1.1, TCP port 5050
+TCP window size:  153 KByte (default)
+------------------------------------------------------------
+[  3] local 10.0.0.1 port 36696 connected with 10.0.1.1 port 5050
+[ ID] Interval       Transfer     Bandwidth
+[  3]  0.0-30.3 sec  53.9 MBytes  14.9 Mbits/sec
+------------------------------------------------------------
+Client connecting to 10.0.1.1, TCP port 5050
+TCP window size: 85.3 KByte (default)
+------------------------------------------------------------
+[  3] local 10.0.0.11 port 59522 connected with 10.0.1.1 port 5050
+[ ID] Interval       Transfer     Bandwidth
+[  3]  0.0-30.5 sec  26.1 MBytes  7.20 Mbits/sec
+------------------------------------------------------------
+Client connecting to 10.0.1.1, TCP port 5050
+TCP window size: 85.3 KByte (default)
+------------------------------------------------------------
+[  3] local 10.0.0.12 port 35576 connected with 10.0.1.1 port 5050
+[ ID] Interval       Transfer     Bandwidth
+[  3]  0.0-30.0 sec  20.4 MBytes  5.70 Mbits/sec
+------------------------------------------------------------
+Client connecting to 10.0.1.1, TCP port 5050
+TCP window size: 85.3 KByte (default)
+------------------------------------------------------------
+[  3] local 10.0.0.13 port 58216 connected with 10.0.1.1 port 5050
+[ ID] Interval       Transfer     Bandwidth
+[  3]  0.0-30.0 sec  18.5 MBytes  5.17 Mbits/sec
+------------------------------------------------------------
+Client connecting to 10.0.1.1, TCP port 5050
+TCP window size: 85.3 KByte (default)
+------------------------------------------------------------
+[  3] local 10.0.0.14 port 33768 connected with 10.0.1.1 port 5050
+[ ID] Interval       Transfer     Bandwidth
+[  3]  0.0-30.0 sec  21.9 MBytes  6.11 Mbits/sec
+------------------------------------------------------------
+Client connecting to 10.0.1.1, TCP port 5050
+TCP window size: 85.3 KByte (default)
+------------------------------------------------------------
+[  3] local 10.0.0.15 port 33920 connected with 10.0.1.1 port 5050
+[ ID] Interval       Transfer     Bandwidth
+[  3]  0.0-30.5 sec  26.4 MBytes  7.26 Mbits/sec
+------------------------------------------------------------
+Client connecting to 10.0.1.1, TCP port 5050
+TCP window size: 85.3 KByte (default)
+------------------------------------------------------------
+[  3] local 10.0.0.16 port 56228 connected with 10.0.1.1 port 5050
+[ ID] Interval       Transfer     Bandwidth
+[  3]  0.0-30.2 sec  20.0 MBytes  5.55 Mbits/sec
+------------------------------------------------------------
+Client connecting to 10.0.1.1, TCP port 5050
+TCP window size: 85.3 KByte (default)
+------------------------------------------------------------
+[  3] local 10.0.0.17 port 59588 connected with 10.0.1.1 port 5050
+[ ID] Interval       Transfer     Bandwidth
+[  3]  0.0-30.3 sec  21.4 MBytes  5.92 Mbits/sec
+------------------------------------------------------------
+Client connecting to 10.0.1.1, TCP port 5050
+TCP window size: 85.3 KByte (default)
+------------------------------------------------------------
+[  3] local 10.0.0.18 port 39850 connected with 10.0.1.1 port 5050
+[ ID] Interval       Transfer     Bandwidth
+[  3]  0.0-30.2 sec  19.2 MBytes  5.34 Mbits/sec
+------------------------------------------------------------
+Client connecting to 10.0.1.1, TCP port 5050
+TCP window size: 85.3 KByte (default)
+------------------------------------------------------------
+[  3] local 10.0.0.19 port 35860 connected with 10.0.1.1 port 5050
+[ ID] Interval       Transfer     Bandwidth
+[  3]  0.0-30.6 sec  24.2 MBytes  6.65 Mbits/sec
+------------------------------------------------------------
+Client connecting to 10.0.1.1, TCP port 5050
+TCP window size: 85.3 KByte (default)
+------------------------------------------------------------
+[  3] local 10.0.0.20 port 43648 connected with 10.0.1.1 port 5050
+[ ID] Interval       Transfer     Bandwidth
+[  3]  0.0-30.5 sec  22.4 MBytes  6.15 Mbits/sec
+------------------------------------------------------------
+Client connecting to 10.0.1.1, TCP port 5050
+TCP window size: 85.3 KByte (default)
+------------------------------------------------------------
+[  3] local 10.0.0.2 port 46528 connected with 10.0.1.1 port 5050
+[ ID] Interval       Transfer     Bandwidth
+[  3]  0.0-30.0 sec  39.8 MBytes  11.1 Mbits/sec
+------------------------------------------------------------
+Client connecting to 10.0.1.1, TCP port 5050
+TCP window size: 85.3 KByte (default)
+------------------------------------------------------------
+[  3] local 10.0.0.21 port 54628 connected with 10.0.1.1 port 5050
+[ ID] Interval       Transfer     Bandwidth
+[  3]  0.0-30.1 sec  19.0 MBytes  5.30 Mbits/sec
+------------------------------------------------------------
+Client connecting to 10.0.1.1, TCP port 5050
+TCP window size: 85.3 KByte (default)
+------------------------------------------------------------
+[  3] local 10.0.0.22 port 32808 connected with 10.0.1.1 port 5050
+[ ID] Interval       Transfer     Bandwidth
+[  3]  0.0-30.8 sec  27.1 MBytes  7.39 Mbits/sec
+------------------------------------------------------------
+Client connecting to 10.0.1.1, TCP port 5050
+TCP window size: 85.3 KByte (default)
+------------------------------------------------------------
+[  3] local 10.0.0.23 port 33234 connected with 10.0.1.1 port 5050
+[ ID] Interval       Transfer     Bandwidth
+[  3]  0.0-30.1 sec  22.2 MBytes  6.20 Mbits/sec
+------------------------------------------------------------
+Client connecting to 10.0.1.1, TCP port 5050
+TCP window size: 85.3 KByte (default)
+------------------------------------------------------------
+[  3] local 10.0.0.24 port 45366 connected with 10.0.1.1 port 5050
+[ ID] Interval       Transfer     Bandwidth
+[  3]  0.0-30.5 sec  23.9 MBytes  6.57 Mbits/sec
+------------------------------------------------------------
+Client connecting to 10.0.1.1, TCP port 5050
+TCP window size: 85.3 KByte (default)
+------------------------------------------------------------
+[  3] local 10.0.0.25 port 35050 connected with 10.0.1.1 port 5050
+[ ID] Interval       Transfer     Bandwidth
+[  3]  0.0-30.0 sec  21.6 MBytes  6.04 Mbits/sec
+------------------------------------------------------------
+Client connecting to 10.0.1.1, TCP port 5050
+TCP window size: 85.3 KByte (default)
+------------------------------------------------------------
+[  3] local 10.0.0.26 port 46982 connected with 10.0.1.1 port 5050
+[ ID] Interval       Transfer     Bandwidth
+[  3]  0.0-30.1 sec  23.1 MBytes  6.44 Mbits/sec
+------------------------------------------------------------
+Client connecting to 10.0.1.1, TCP port 5050
+TCP window size: 85.3 KByte (default)
+------------------------------------------------------------
+[  3] local 10.0.0.27 port 52868 connected with 10.0.1.1 port 5050
+[ ID] Interval       Transfer     Bandwidth
+[  3]  0.0-30.1 sec  24.8 MBytes  6.90 Mbits/sec
+------------------------------------------------------------
+Client connecting to 10.0.1.1, TCP port 5050
+TCP window size: 85.3 KByte (default)
+------------------------------------------------------------
+[  3] local 10.0.0.28 port 34260 connected with 10.0.1.1 port 5050
+[ ID] Interval       Transfer     Bandwidth
+[  3]  0.0-30.2 sec  32.0 MBytes  8.89 Mbits/sec
+------------------------------------------------------------
+Client connecting to 10.0.1.1, TCP port 5050
+TCP window size: 85.3 KByte (default)
+------------------------------------------------------------
+[  3] local 10.0.0.29 port 39886 connected with 10.0.1.1 port 5050
+[ ID] Interval       Transfer     Bandwidth
+[  3]  0.0-30.1 sec  38.8 MBytes  10.8 Mbits/sec
+------------------------------------------------------------
+Client connecting to 10.0.1.1, TCP port 5050
+TCP window size: 85.3 KByte (default)
+------------------------------------------------------------
+[  3] local 10.0.0.30 port 45188 connected with 10.0.1.1 port 5050
+[ ID] Interval       Transfer     Bandwidth
+[  3]  0.0-30.1 sec  63.9 MBytes  17.8 Mbits/sec
+------------------------------------------------------------
+Client connecting to 10.0.1.1, TCP port 5050
+TCP window size: 85.3 KByte (default)
+------------------------------------------------------------
+[  3] local 10.0.0.3 port 39954 connected with 10.0.1.1 port 5050
+[ ID] Interval       Transfer     Bandwidth
+[  3]  0.0-30.0 sec  24.5 MBytes  6.84 Mbits/sec
+------------------------------------------------------------
+Client connecting to 10.0.1.1, TCP port 5050
+TCP window size: 85.3 KByte (default)
+------------------------------------------------------------
+[  3] local 10.0.0.4 port 43012 connected with 10.0.1.1 port 5050
+[ ID] Interval       Transfer     Bandwidth
+[  3]  0.0-30.2 sec  29.9 MBytes  8.30 Mbits/sec
+------------------------------------------------------------
+Client connecting to 10.0.1.1, TCP port 5050
+TCP window size: 85.3 KByte (default)
+------------------------------------------------------------
+[  3] local 10.0.0.5 port 56344 connected with 10.0.1.1 port 5050
+[ ID] Interval       Transfer     Bandwidth
+[  3]  0.0-30.1 sec  32.9 MBytes  9.16 Mbits/sec
+------------------------------------------------------------
+Client connecting to 10.0.1.1, TCP port 5050
+TCP window size: 85.3 KByte (default)
+------------------------------------------------------------
+[  3] local 10.0.0.6 port 48790 connected with 10.0.1.1 port 5050
+[ ID] Interval       Transfer     Bandwidth
+[  3]  0.0-30.0 sec  21.6 MBytes  6.04 Mbits/sec
+------------------------------------------------------------
+Client connecting to 10.0.1.1, TCP port 5050
+TCP window size: 85.3 KByte (default)
+------------------------------------------------------------
+[  3] local 10.0.0.7 port 43272 connected with 10.0.1.1 port 5050
+[ ID] Interval       Transfer     Bandwidth
+[  3]  0.0-30.1 sec  19.2 MBytes  5.36 Mbits/sec
+------------------------------------------------------------
+Client connecting to 10.0.1.1, TCP port 5050
+TCP window size: 85.3 KByte (default)
+------------------------------------------------------------
+[  3] local 10.0.0.8 port 59070 connected with 10.0.1.1 port 5050
+[ ID] Interval       Transfer     Bandwidth
+[  3]  0.0-30.2 sec  22.4 MBytes  6.21 Mbits/sec
+------------------------------------------------------------
+Client connecting to 10.0.1.1, TCP port 5050
+TCP window size: 85.3 KByte (default)
+------------------------------------------------------------
+[  3] local 10.0.0.9 port 54856 connected with 10.0.1.1 port 5050
+[ ID] Interval       Transfer     Bandwidth
+[  3]  0.0-30.3 sec  23.5 MBytes  6.50 Mbits/sec
+------------------------------------------------------------
+Client connecting to 10.0.1.1, TCP port 5050
+TCP window size: 85.3 KByte (default)
+------------------------------------------------------------
+[  3] local 10.0.0.10 port 38268 connected with 10.0.1.1 port 5050
+[ ID] Interval       Transfer     Bandwidth
+[  3]  0.0-30.7 sec  20.0 MBytes  5.47 Mbits/sec
