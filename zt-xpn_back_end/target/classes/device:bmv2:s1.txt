@@ -1,0 +1,126 @@
+pkg_info {
+  arch: "v1model"
+}
+tables {
+  preamble {
+    id: 47617923
+    name: "IngressControl.acl_t"
+    alias: "acl_t"
+  }
+  match_fields {
+    id: 1
+    name: "parsed_headers.ethernet.etherType"
+    bitwidth: 16
+    match_type: TERNARY
+  }
+  match_fields {
+    id: 2
+    name: "parsed_headers.ip.destinationAddress"
+    bitwidth: 32
+    match_type: TERNARY
+  }
+  match_fields {
+    id: 3
+    name: "parsed_headers.ip.proto"
+    bitwidth: 8
+    match_type: TERNARY
+  }
+  match_fields {
+    id: 4
+    name: "parsed_headers.ip.sourceAddress"
+    bitwidth: 32
+    match_type: TERNARY
+  }
+  match_fields {
+    id: 5
+    name: "parsed_headers.tcp.destinationPort"
+    bitwidth: 16
+    match_type: TERNARY
+  }
+  action_refs {
+    id: 18854656
+  }
+  action_refs {
+    id: 16914208
+  }
+  action_refs {
+    id: 18715320
+  }
+  direct_resource_ids: 335165217
+  size: 1024
+}
+actions {
+  preamble {
+    id: 18854656
+    name: "IngressControl.dropPacket"
+    alias: "dropPacket"
+  }
+}
+actions {
+  preamble {
+    id: 16914208
+    name: "IngressControl.send_to_controller"
+    alias: "send_to_controller"
+  }
+}
+actions {
+  preamble {
+    id: 18715320
+    name: "IngressControl.set_out_port"
+    alias: "set_out_port"
+  }
+  params {
+    id: 1
+    name: "out_port"
+    bitwidth: 9
+  }
+}
+direct_counters {
+  preamble {
+    id: 335165217
+    name: "IngressControl.acl_t_flow_counter"
+    alias: "acl_t_flow_counter"
+  }
+  spec {
+    unit: BOTH
+  }
+  direct_table_id: 47617923
+}
+controller_packet_metadata {
+  preamble {
+    id: 69098127
+    name: "packet_in"
+    alias: "packet_in"
+    annotations: "@controller_header(\"packet_in\")"
+  }
+  metadata {
+    id: 1
+    name: "ingress_port"
+    bitwidth: 9
+  }
+  metadata {
+    id: 2
+    name: "padding"
+    bitwidth: 7
+  }
+}
+controller_packet_metadata {
+  preamble {
+    id: 78842819
+    name: "packet_out"
+    alias: "packet_out"
+    annotations: "@controller_header(\"packet_out\")"
+  }
+  metadata {
+    id: 1
+    name: "egress_port"
+    bitwidth: 9
+  }
+  metadata {
+    id: 2
+    name: "padding"
+    bitwidth: 7
+  }
+}
+type_info {
+}
