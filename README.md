@@ -75,6 +75,8 @@ ZT-XPN integrates with **ONOS** for SDN control plane orchestration.
    cd onos
    ```
 
+> **Note:** Please ensure that you checkout the codebase with the 2.5.1 tag.
+
 2. Install **Bazel**, the required build system for ONOS:
 
    ```sh
@@ -103,31 +105,7 @@ The repository is structured as follows:
 
 Each subdirectory contains its own `README.md` file with additional details.
 
-## Usage
 
-Once all dependencies are installed, you can start ONOS and deploy policies using ZT-XPN's **policy specification tool and compiler**.
-
-```sh
-cd onos
-bazel build onos
-bazel run onos-local
-```
-
-For Mininet topology testing:
-
-```sh
-sudo mn --topo tree,depth=2,fanout=2 --controller=remote,ip=<ONOS_IP>
-```
-
-## Contributing
-
-We welcome contributions! To contribute:
-
-1. **Fork** the repository.
-2. **Create a feature branch** (`git checkout -b feature-branch`).
-3. **Commit your changes** (`git commit -m "Description of changes"`).
-4. **Push to your fork** (`git push origin feature-branch`).
-5. **Submit a Pull Request** for review.
 
 ## License
 
