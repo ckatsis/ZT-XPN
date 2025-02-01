@@ -27,7 +27,7 @@ Indicates the network system under evaluation:
   - **Reference firewall**: [firewall.p4](https://github.com/p4lang/tutorials/blob/master/exercises/firewall/solution/firewall.p4)  
 
 - **`zt-xpn`** – Results when **ZT-XPN-generated** programs are deployed in the data plane  
-  - **If `stateful` appears in the file name**, the log pertains to the **stateful firewall implementation**; otherwise, it represents a **stateless** deployment.
+  - **If `stateful` appears in the file name**, the log pertains to the **stateful firewall scenario**; otherwise, it represents a **stateless** deployment.
 
 #### **2. `<topology>` (Topology Configuration)**
 Expressed in the format:
@@ -52,7 +52,7 @@ Indicates how policies are enforced:
 
 ## Included Scripts
 
-### **1. `iperf_result_parser.py`**  
+### `iperf_result_parser.py`**  
 A helper script to analyze log files in this directory.  
 
 **Usage:**  
