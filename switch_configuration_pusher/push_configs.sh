@@ -1,3 +1,12 @@
+# ZT-XPN: An end-to-end Zero-Trust Architecture for Next Generation
+# Programmable Networks
+# 
+# Authors:  Charalampos Katsis  (ckatsis@purdue.edu)
+#           Elisa Bertino       (bertino@purdue.edu)
+# =================================================================
+
+
+
 #!/bin/bash
 
 # Directory where the JSON configuration files are located
