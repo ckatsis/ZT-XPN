@@ -2,6 +2,12 @@
 
 Welcome to the **ZT-XPN** repository!
 
+## 👥 Authors
+
+- **Charalampos Katsis** — [Purdue University](https://www.ckatsis.com/)  
+- **Elisa Bertino** — [Purdue University](https://www.cs.purdue.edu/people/faculty/bertino.html)
+
+
 ## Overview
 
 **Zero-Trust Architecture (ZTA)** mandates strict internal and perimeter defenses, ensuring that communication occurs solely on a per-request and need-only basis. Achieving this requires **robust access control (AC) policies** enforced throughout the network.
@@ -110,3 +116,17 @@ Each subdirectory contains its own `README.md` file with additional details.
 ## License
 
 This project is licensed under the **MIT License**. See the [LICENSE](LICENSE) file for details.
+
+## 📚 Citation
+
+If you use this work in your own research, please cite it as:
+
+```bibtex
+@inproceedings{katsis2025ztxpn,
+  title     = {ZT-XPN: An End-to-End Zero-Trust Architecture for Next Generation Programmable Networks},
+  author    = {Charalampos Katsis and Elisa Bertino},
+  booktitle = {Proceedings of the 2025 IEEE 11th International Conference on Network Softwarization (NetSoft)},
+  year      = {2025},
+  publisher = {IEEE}
+}
+
